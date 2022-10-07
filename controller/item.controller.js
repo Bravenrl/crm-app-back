@@ -7,7 +7,8 @@ class ItemController {
   }
 
   async getAll(req, res) {
-    res.json('OK');
+    const items = await db.query('SELECT * FROM items_table')
+    res.json(items.rows);
   }
 }
 
